@@ -5,7 +5,8 @@
         <title>261 Proficiency</title>
         <meta name="description" content="contents of page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="style.css">
+		<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         </script>
         <![endif]--> 
@@ -23,13 +24,74 @@
     <section>
         <h2>Section</h2>
             <article>
-                <h3>Article</h3>
-                <p>This is an article that is part of the section</p>
+                <h3>Canvas</h3>
+                <div id="hidden_img">
+<img id="young_me" src="33.png" alt="Young Me" width="250" height="350">
+</div>
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="250" height="300"></canvas>
+
+<p><button onclick="photo()">Image</button></p>
+<p><button onclick="gradient()">gradient</button></p>
+<p><button onclick="fillText()">Solid Text</button></p>
+<p><button onclick="strokeText()">Hollow Text</button></p>
+<p><button onclick="squares()">Squares</button></p>
+<p><button onclick="white()">Clear</button></p>
+
+<script>
+function photo() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.getElementById("young_me");
+    ctx.drawImage(img,20,10);
+}
+
+function gradient(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var grd = ctx.createRadialGradient(90,250,20,200,60,100);
+grd.addColorStop(0,"green");
+grd.addColorStop(1,"white");
+ctx.fillStyle = grd;
+ctx.fillRect(10,10, c.width,c.height);
+}
+
+
+function white(Mycanvas)
+{
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.rect(0, 0, c.width, c.height);
+ctx.fillStyle = "white";
+ctx.fill();
+}
+function fillText(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "60px Arial";
+ctx.fillText("Skyler",10,70);
+}
+function strokeText(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "60px Arial";
+ctx.strokeText("Skyler",10,70);
+}
+</script>
             </article>
         <article>
-            <h3>second Article</h3>
-            <p>This is another article that is part of the section</p>
+            <h3>audio</h3>
+            <audio controls>
+				<source src="HappyTogether.mp3" type="audio/mpeg">
+				<audio>
         </article>
+		<article>
+		<h3>video<h3>
+			<video width="500" height="600" controls>
+			<source src="water.mp4" type="video/mp4">
+			</video>
     </section>
     <footer>
         <p>created by Skyler Hildreth</p>
