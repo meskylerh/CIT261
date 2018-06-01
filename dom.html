@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dom Manipulation</title>
+        <meta name="description" content="contents of page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+		</head>
+		<body>
+		<script>
+		document.getElementById("btn1").onclick = displayFun;
+		
+		function displayFun(){
+			document.getElementById("change1").innerHTML = "Party Time!";
+		}
+		function wishList(text){
+		var list = document.createElement("LI");
+		var node = document.createTextNode(text);
+		list.appendChild(node);
+		var element = document.getElementById("div1");
+		element.appendChild(list);
+		
+		}
+		</script>
+		
+		<h1>Dom Manipulation</h1>
+		<section>
+		
+		<h2 id="change1">We are going to have some fun</h2>
+		<button onclick="displayFun()">Start</button>
+		
+		<h3>Here is a place to put a wishlist</h3>
+		<label>what do you wish for</label>
+		<input id="wish" type="text" value="An A"><br>
+		<button onclick=wishList(document.getElementById('wish').value)>Add your wish</button><br>
+		<div id="div1"></div>
+		
+		
+		</section>
+		</body>
+		</html>
