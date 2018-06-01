@@ -6,94 +6,38 @@
         <meta name="description" content="contents of page">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Press+Start+2P" rel="stylesheet">
+
 		<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         </script>
         <![endif]--> 
     </head>
+	<body>
     <header>
-        <h1>Skyler's Proficiency</h1>
+        <h1>Skyler's Cit261</h1>
     </header>
     
     <nav>
         <ul>
-            <li>Home</li>
-            <li>next topic</li>
+            <li><a href= "index.html">Home</a></li>
+            <li><a href= "functions.html">Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays			
+Object Creation Functions, Inheritance, Properties, Methods, Instantiation</a></li>		
+			<li><a href= "json.html">JSON Parse, Stringify</a></li>			
+			<li><a href= "xml.html">Using XMLHTTPRequest to Consume a JSON Web Service</a></li>
+			<li><a href= "storage.html">Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</a></li>	
+			<li><a href= "dom.html">DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</a></li>			
+			<li><a href= "maniplulate.html">Manipulating CSS Class Properties Using JavaScript</a></li>			
+			<li><a href= "animation.html">Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</a></li>			
+			<li><a href= "events.html">Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</a></li>			
+			<li><a href= "tags.html">HTML5 Tags - Video, Audio, and Canvas</a></li>			
+			<li><a href= "transition.html">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</a></li>			
+			<li><a href= "transforms.html">Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library)</a></li>			
+			<li><a href= "triggering.html">Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library)</a></li>
         </ul>
     </nav>
-    <section>
-        <h2>Section</h2>
-            <article>
-                <h3>Canvas</h3>
-                <div id="hidden_img">
-<img id="young_me" src="33.png" alt="Young Me" width="250" height="350">
-</div>
-
-<p>Canvas:</p>
-<canvas id="myCanvas" width="250" height="300"></canvas>
-
-<p><button onclick="photo()">Image</button></p>
-<p><button onclick="gradient()">gradient</button></p>
-<p><button onclick="fillText()">Solid Text</button></p>
-<p><button onclick="strokeText()">Hollow Text</button></p>
-<p><button onclick="squares()">Squares</button></p>
-<p><button onclick="white()">Clear</button></p>
-
-<script>
-function photo() {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    var img = document.getElementById("young_me");
-    ctx.drawImage(img,20,10);
-}
-
-function gradient(){
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-var grd = ctx.createRadialGradient(90,250,20,200,60,100);
-grd.addColorStop(0,"green");
-grd.addColorStop(1,"white");
-ctx.fillStyle = grd;
-ctx.fillRect(10,10, c.width,c.height);
-}
-
-
-function white(Mycanvas)
-{
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.rect(0, 0, c.width, c.height);
-ctx.fillStyle = "white";
-ctx.fill();
-}
-function fillText(){
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.font = "60px Arial";
-ctx.fillText("Skyler",10,70);
-}
-function strokeText(){
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.font = "60px Arial";
-ctx.strokeText("Skyler",10,70);
-}
-</script>
-            </article>
-        <article>
-            <h3>audio</h3>
-            <audio controls>
-				<source src="HappyTogether.mp3" type="audio/mpeg">
-				<audio>
-        </article>
-		<article>
-		<h3>video<h3>
-			<video width="500" height="600" controls>
-			<source src="water.mp4" type="video/mp4">
-			</video>
-    </section>
     <footer>
         <p>created by Skyler Hildreth</p>
     </footer>
+	</body>
 </html>

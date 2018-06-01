@@ -1,0 +1,25 @@
+body{
+	background-color:tan;
+	cursor: url(cursor.cur), auto;
+}
+nav {
+	display:flex;
+	text-align:center;
+	justify-content: space-around;
+	
+}
+ul {
+	list-style:none;
+}
+ul li {
+	padding: 1em;
+}
+a{
+	color: green;
+	font-family: 'Bowlby One SC', cursive;
+}
+h1 {
+	font-family: 'Press Start 2P', cursive;
+	text-align: center;
+	padding-bottom:1em;
+}
