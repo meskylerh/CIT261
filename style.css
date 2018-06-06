@@ -28,3 +28,6 @@ footer{
 	padding-top:10em;
 	text-align:center;
 }
+table, th, td {
+    border: 1px solid black;
+}
