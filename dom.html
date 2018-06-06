@@ -9,7 +9,6 @@
 		</head>
 		<body>
 		<script>
-		document.getElementById("btn1").onclick = displayFun;
 		
 		function displayFun(){
 			document.getElementById("change1").innerHTML = "Party Time!";
@@ -18,9 +17,16 @@
 		var list = document.createElement("LI");
 		var node = document.createTextNode(text);
 		list.appendChild(node);
-		var element = document.getElementById("div1");
+		var element = document.getElementById("theList");
 		element.appendChild(list);
+		}
+
+		</script>
 		
+		<script>
+		function removeFromList(){
+		var list = document.getElementById("theList");
+		list.removeChild(list.lastChild);
 		}
 		</script>
 		
@@ -33,10 +39,15 @@
 		<h3>Here is a place to put a wishlist</h3>
 		<label>what do you wish for</label>
 		<input id="wish" type="text" value="An A"><br>
-		<button onclick=wishList(document.getElementById('wish').value)>Add your wish</button><br>
-		<div id="div1"></div>
+		<button onclick=wishList(document.getElementById("wish").value)>Add your wish</button>
+		<label>Dont like what you put:</label><button onclick=removeFromList()>Fix it</button>
+		<br>
+		<ul id="theList"></ul>
 		
 		
 		</section>
+		<footer>
+        <p>created by Skyler Hildreth</p>
+			</footer>
 		</body>
 		</html>
