@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+   <head>
+      <meta charset="UTF-8">
+      <title>Functions</title>
+      <meta name="description" content="contents of page">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+      <h1>Functions</h1>
+      <nav><a href= "index.html">Home</a></nav>
+      <script>
+         var randomNumber = Math.floor((Math.random() * 100) + 1);
+         var result = " ";
+         var count = 0;
+         
+         function newNum (){
+         randomNumber = Math.floor((Math.random() * 100) + 1);
+         document.getElementById("output").innerHTML = " ";
+         var image = document.getElementById('sign');
+         image.src = "question_mark.png"
+         document.getElementById("guess").value = " ";
+         }
+         
+         function takeGuess(g) {
+         if (g == randomNumber){
+         document.getElementById("output").innerHTML = "You Got it Right!";
+         var image = document.getElementById('sign');
+         image.src = "Star.png"
+         document.getElementById("guess").value = " ";
+         }
+         else if (g < randomNumber){
+         document.getElementById("output").innerHTML = "Your guess is too low try a larger number!";
+         var image = document.getElementById('sign');
+         image.src = "Arrow_up.png"
+         document.getElementById("guess").value = " ";
+         }
+         else {
+         document.getElementById("output").innerHTML = "Your guess is too high try a smaller number!";
+         var image = document.getElementById('sign');
+         image.src = "arrow_down.png"
+         document.getElementById("guess").value = " ";
+         }
+         }
+      </script>
+      <script>
+         function numCount(end){
+         	result = " ";
+         	for (var i = 0; i < end; i++){
+         	count++
+         	result += count + "<br>";
+         	}
+         	document.getElementById("output2").innerHTML = result;
+         	document.getElementById("endNum").value = " ";
+         	count = 0;
+         }
+         function clearNum() {
+         	document.getElementById("output2").innerHTML = " ";
+}
+      </script>
+	  
+	  <script>
+	  function pickArray(A) {
+	  var list = ["apple", "banana", " pomegranate", "pinapple", "mango", "grape", "blueberry", "Raspberry"];
+	  if (A <= 7 && A >= 0){
+	  document.getElementById("output3").innerHTML = list[A];
+	  }
+	  else
+	  document.getElementById("output3").innerHTML = "enter a number between 0-7";
+	  }
+	  </script>
+      <h3>Guess the number</h3>
+      <p>This is using conditions to guess a number that is random and the user will keep
+         guessing until they get it right. This also uses DOM manipulation as it changes things (img, text) on 
+         each guess.
+      </p>
+      <label>put you guess here 1 - 100</label>
+      <input id="guess" type="text" value="">
+      <button onclick=takeGuess(document.getElementById("guess").value)>guess</button><br>
+      <label>Start over</label>
+      <button onclick=newNum()>Reset</button>
+      <strong>
+         <p id ="output"></p>
+      </strong>
+      <img src="question_mark.png" alt="Sign" id="sign"><br><br>
+      <h1> Loops</h1>
+
+      <p>put a number it will go through a for loop and print out the amount from 1 to the input number</p>
+      <label>put your number here</label>
+      <input id="endNum" type="number" value="">
+      <button onclick=numCount(document.getElementById("endNum").value)>Submit</button>
+      <button onclick=clearNum()>Clear</button>
+      <p id="output2"></p>
+	  <h5>For Loop</h5>
+	  <strong>this is what it implemented in this function</strong>
+	  <p>  for (var i = 0; i < end; i++){<br>
+         	count++<br>
+         	result += count + '[linebreak]';<br>
+         	}</P>
+	  <h5> while Loop</h5>
+	  <p>the same function can be accomplished with a while loop</P>
+	  <p>it will look like this:</p>
+	  <p>	while (i < end) {<br>
+    count++<br>
+    result += count + "[linebreak]";<br>
+    i++;<br>
+}</p>
+
+<h1>Arrays</h1>
+<p>We can create an array easily by doing:</P>
+<strong> var list = ["apple", "banana", " pomegranate", "pinapple", "mango", "grape", "blueberry", "Raspberry"];</strong>
+<p> now we can use this array</P>
+		<label>Enter a number between 0-7</label>
+      <input id="arrayNum" type="number" value="">
+      <button onclick=pickArray(document.getElementById("arrayNum").value)>Pick the fruit</button>
+<p id="output3"></p>
+      <section>
+         <footer>
+            <p>created by Skyler Hildreth</p>
+         </footer>
+      </section>
+   </body>
+</html>

@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <title>JSON</title>
-        <meta name="description" content="contents of page">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
-		</head>
-		<body>
-		<h1>Json</h1>
-		<h3>String of JSON</h3>
-			<p id="theFirst"></p>
-
-
-<script>
-
-var obj = { "students" :
-  [
-    { "first" : "John",
-      "last"  : "Doe",
-      "address" : { "city" : "Chicago", "state" : "IL", "zip" : "80134" },
-      "major" : "Computer Science",
-      "gpa"   : "3.5"
-    },
-    { "first" : "Susan",
-      "last"  : "Smith",
-      "address" : { "city" : "Idaho Falls", "state" : "ID", "zip" : "83234" },
-      "major" : "Computer Engineering",
-      "gpa"   : "3.2"
-    },
-    { "first" : "Steve",
-      "last"  : "Anderson",
-      "address" : { "city" : "Rexburg", "state" : "ID", "zip" : "83460" },
-      "major" : "Electrical Engineering",
-      "gpa"   : "3.0"
-    }    
-  ]
-};
-var jsonFirst = JSON.stringify(obj);
-document.getElementById("theFirst").innerHTML = jsonFirst;
-</script>
-
-<h3>parsing JSON</h3>
-<ul id="theSecond"></ul>
-
-<script>
-var obj2 = JSON.parse('{ "students":[ { "first" : "John", "last"  : "Doe", "address" : { "city" : "Chicago", "state" : "IL", "zip" : "80134" },"major" : "Computer Science", "gpa"   : "3.5"},{ "first" : "Susan","last"  : "Smith","address" : { "city" : "Idaho Falls", "state" : "ID", "zip" : "83234" },"major" : "Computer Engineering","gpa"   : "3.2" },{ "first" : "Steve","last"  : "Anderson","address" : { "city" : "Rexburg", "state" : "ID", "zip" : "83460" },"major" : "Electrical Engineering","gpa"   : "3.0"}    ]}');
-var text = " ";
-for (var i = 0; i < obj2.students.length; i++){
-	text += "<li>" + "<strong>"+obj2.students[i].first + "</strong>" + " " + "<strong>"+ obj2.students[i].last +"</strong>" +"</li>" +
-	"<li>" + obj2.students[i].address.city  + " " + obj2.students[i].address.state  + obj2.students[i].address.zip + "</li>" +
-	"<li>" + obj2.students[i].major + "</li>" +
-	"<li>" + obj2.students[i].gpa + "</li>";
-}
-document.getElementById("theSecond").innerHTML = text;
-
-
-</script>
-		
-		
-
-			<section>
-		<footer>
-        <p>created by Skyler Hildreth</p>
-			</footer>
-			</section>
-		</body>
-		</html>
+   <head>
+      <meta charset="UTF-8">
+      <title>JSON</title>
+      <meta name="description" content="contents of page">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+      <h1>Json</h1>
+      <nav><a href= "index.html">Home</a></nav>
+      <h3>String of JSON</h3>
+      <p id="theFirst"></p>
+      <script>
+         var obj = { "students" :
+           [
+             { "first" : "John",
+               "last"  : "Doe",
+               "address" : { "city" : "Chicago", "state" : "IL", "zip" : "80134" },
+               "major" : "Computer Science",
+               "gpa"   : "3.5"
+             },
+             { "first" : "Susan",
+               "last"  : "Smith",
+               "address" : { "city" : "Idaho Falls", "state" : "ID", "zip" : "83234" },
+               "major" : "Computer Engineering",
+               "gpa"   : "3.2"
+             },
+             { "first" : "Steve",
+               "last"  : "Anderson",
+               "address" : { "city" : "Rexburg", "state" : "ID", "zip" : "83460" },
+               "major" : "Electrical Engineering",
+               "gpa"   : "3.0"
+             }    
+           ]
+         };
+         var jsonFirst = JSON.stringify(obj);
+         document.getElementById("theFirst").innerHTML = jsonFirst;
+      </script>
+      <h3>parsing JSON</h3>
+      <p>This is the same Json just parsed and put into a UL</p>
+      <ul id="theSecond"></ul>
+      <script>
+         var obj2 = JSON.parse('{ "students":[ { "first" : "John", "last"  : "Doe", "address" : { "city" : "Chicago", "state" : "IL", "zip" : "80134" },"major" : "Computer Science", "gpa"   : "3.5"},{ "first" : "Susan","last"  : "Smith","address" : { "city" : "Idaho Falls", "state" : "ID", "zip" : "83234" },"major" : "Computer Engineering","gpa"   : "3.2" },{ "first" : "Steve","last"  : "Anderson","address" : { "city" : "Rexburg", "state" : "ID", "zip" : "83460" },"major" : "Electrical Engineering","gpa"   : "3.0"}    ]}');
+         var text = " ";
+         for (var i = 0; i < obj2.students.length; i++){
+         	text += "<li>" + "<strong>"+obj2.students[i].first + "</strong>" + " " + "<strong>"+ obj2.students[i].last +"</strong>" +"</li>" +
+         	"<li>" + obj2.students[i].address.city  + " " + obj2.students[i].address.state  + ", " + obj2.students[i].address.zip + "</li>" +
+         	"<li>" + obj2.students[i].major + "</li>" +
+         	"<li>" + obj2.students[i].gpa + "</li>";
+         }
+         document.getElementById("theSecond").innerHTML = text;
+         
+         
+      </script>
+      <section>
+         <footer>
+            <p>created by Skyler Hildreth</p>
+         </footer>
+      </section>
+   </body>
+</html>

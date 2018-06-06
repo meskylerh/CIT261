@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <title>HTML5 Tags</title>
-        <meta name="description" content="contents of page">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
-		<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Press+Start+2P" rel="stylesheet">
-
-		<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        </script>
-        <![endif]--> 
-    </head>
-	<body>
-	<script>
-	function displayCircle(){
-	var canvas = document.getElementById("theCanvas");
-	var ctx = canvas.getContext("2d");
-	ctx.fillstyle = "#50C878";
-	ctx.fillRect(20,20,200,150);
-	}
-	</script>
-
-        <h1>HTML5 Tags</h1>
-		
-		<h3>The video Tag</h3>
-		<video width= "460" hight="320" controls>
-		<source src="water.MP4" type='video/mp4'>
-		<source src="water.ogg" type="video/ogg">
-		</video>
-		
-		<h3> The audio Tag</h3>
-		<audio controls>
-		<source src="HappyTogether.mp3" type="audio/mpeg">
-		<source src="HappyTogether.ogg" type="audio/ogg">
-		</audio>
-		<p>simple Plan "happy Together"</p>
-		
-		<h3>The CAnvas<h3>
-		<canvas id="theCanvas" width="500" height="400" style="border:1px solid;"></canvas>
-		<button onclick="displayCircle()">Circle</button>
-		<button onclick="displayCircle()">Rectangle</button>
-		<button onclick="displayCircle()">line</button>
-		
-    <footer>
-        <p>created by Skyler Hildreth</p>
-    </footer>
-	</body>
+   <head>
+      <meta charset="UTF-8">
+      <title>HTML5 Tags</title>
+      <meta name="description" content="contents of page">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Press+Start+2P" rel="stylesheet">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      </script>
+      <![endif]--> 
+   </head>
+   <body>
+      <script>
+         function displayRectangle(){
+         var canvas = document.getElementById("theCanvas");
+         var ctx = canvas.getContext("2d");
+         ctx.fillstyle = "#50C878";
+         ctx.fillRect(20,20,200,150);
+         }
+      </script>
+      <script>
+         <script>
+         function displayCircle(){
+         var canvas = document.getElementById("theCanvas");
+         var ctx = canvas.getContext("2d");
+         ctx.beginPath();
+         ctx.arc(95,50,40,0,2*Math.PI);
+         ctx.stroke();
+         }
+      </script> 
+      </script>
+      <h1>HTML5 Tags</h1>
+      <nav><a href= "index.html">Home</a></nav>
+      <h3>The video Tag</h3>
+      <video width= "460" hight="320" controls>
+         <source src="water.MP4" type='video/mp4'>
+         <source src="water.ogg" type="video/ogg">
+      </video>
+      <h3> The audio Tag</h3>
+      <audio controls>
+         <source src="HappyTogether.mp3" type="audio/mpeg">
+         <source src="HappyTogether.ogg" type="audio/ogg">
+      </audio>
+      <p>simple Plan "happy Together"</p>
+      <h3>
+      The CAnvas
+      <h3>
+      <canvas id="theCanvas" width="500" height="400" style="border:1px solid;"></canvas>
+      <button onclick="displayCircle()">Circle</button>
+      <button onclick="displayRectangle()">Rectangle</button>
+      <button onclick="">line</button>
+      <footer>
+         <p>created by Skyler Hildreth</p>
+      </footer>
+   </body>
 </html>
