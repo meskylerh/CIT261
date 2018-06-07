@@ -2,17 +2,47 @@
 <html lang="en-us">
    <head>
       <meta charset="UTF-8">
-      <title>XMLHTTPRequest</title>
+      <title>CSS manipulate</title>
       <meta name="description" content="contents of page">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
    <body>
-      <h1>XMLHTTPRequest</h1>
+      <h1>CSS manipulate</h1>
 	       <nav><a href= "index.html">Home</a></nav>
+		   
+
+		   
+		   <p id= "paragraph">
+		   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt felis facilisis ultricies
+		   fringilla. Curabitur quis justo ipsum. Donec felis dui, convallis non libero ac, placerat blandit neque.
+		   Quisque ut fringilla massa. Nullam in mi risus. Donec et sagittis lectus. Aliquam libero est, consequat
+		   eu justo vel, feugiat facilisis magna. Ut lobortis magna sit amet sem auctor volutpat. Ut blandit velit
+		   nec nulla dignissim, vitae ornare ligula venenatis. Mauris vehicula justo eget dolor pharetra ultrices.
+		   Vivamus blandit est in aliquet tincidunt. Morbi vitae facilisis dolor.
+		   </p>
+		   
+		 <label>Change the background color to whatever color</label>
+         <input id="bgColor" type="text" value="green"></input>
+		<button onclick=changeBGColor(document.getElementById("bgColor").value)> Change </button> <br>
+		
+		<label>Change the size of the text by px</label>
+         <input id="textSize" type="text" value="12"></input>
+		<button onclick=changeTextSize(document.getElementById("textSize").value)> Change  </button> <br>
 		           <footer>
             <p>created by Skyler Hildreth</p>
          </footer>
-
+	
+	<script>
+	function changeBGColor(bgc){
+	var element = document.getElementById("paragraph");
+	element.style.backgroundColor = bgc;
+		}
+		
+	function changeTextSize(ts){
+	var element = document.getElementById("paragraph");
+	element.style.fontSize = ts + "px";
+		}
+	</script>
    </body>
 </html>
