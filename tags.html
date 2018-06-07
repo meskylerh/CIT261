@@ -13,25 +13,6 @@
       <![endif]--> 
    </head>
    <body>
-      <script>
-         function displayRectangle(){
-         var canvas = document.getElementById("theCanvas");
-         var ctx = canvas.getContext("2d");
-         ctx.fillstyle = "#50C878";
-         ctx.fillRect(20,20,200,150);
-         }
-      </script>
-      <script>
-         <script>
-         function displayCircle(){
-         var canvas = document.getElementById("theCanvas");
-         var ctx = canvas.getContext("2d");
-         ctx.beginPath();
-         ctx.arc(95,50,40,0,2*Math.PI);
-         ctx.stroke();
-         }
-      </script> 
-      </script>
       <h1>HTML5 Tags</h1>
       <nav><a href= "index.html">Home</a></nav>
       <h3>The video Tag</h3>
@@ -45,13 +26,51 @@
          <source src="HappyTogether.ogg" type="audio/ogg">
       </audio>
       <p>simple Plan "happy Together"</p>
+      <script>
+         function loadAPI(t) {
+          var x2http = new XMLHttpRequest();
+          var url = "http://www.omdbapi.com/?t=" + t + "&apikey=cd336b3";
+          
+          x2http.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+         	var out = JSON.parse(this.responseText);
+         	printPoster(out);
+            }
+          };
+          x2http.open("GET", url, true);
+          x2http.send();
+          
+          function printPoster(p){
+         var image = p.Poster;
+         	loadCanvas(image)
+                 }
+         function loadCanvas(pic){
+             var canvas = document.getElementById('theCanvas');
+                var context = canvas.getContext('2d');
+         
+                var imageObj = new Image();
+                imageObj.onload = function() {
+                  context.drawImage(this, 0, 0);
+                };
+         
+                imageObj.src = pic;
+              }
+              
+         }
+         	 
+         
+      </script>
       <h3>
-      The CAnvas
-      <h3>
-      <canvas id="theCanvas" width="500" height="400" style="border:1px solid;"></canvas>
-      <button onclick="displayCircle()">Circle</button>
-      <button onclick="displayRectangle()">Rectangle</button>
-      <button onclick="">line</button>
+         The CAnvas
+      </h3>
+      <p>This is using the XMLHttpRequest that I have used with the API for the movie poster and putting it into 
+         a canvas. the canvas can also do other things like draw objects and such but this will get the image and load
+         it into the canvas
+      </p>
+      <label>Put your movie here</label>
+      <input id="title" type="text" value="big trouble in little china"><br>
+      <button type="button" onclick=loadAPI(document.getElementById("title").value)>API File</button> <br>
+      <canvas id="theCanvas" width="300" height="400" style="border:1px solid;"></canvas>
       <footer>
          <p>created by Skyler Hildreth</p>
       </footer>

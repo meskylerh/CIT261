@@ -9,6 +9,7 @@
    </head>
    <body>
       <h1>XMLHTTPRequest</h1>
+	       <nav><a href= "index.html">Home</a></nav>
 	  <script>
 function loadJson() {
   var xhttp = new XMLHttpRequest();
@@ -35,9 +36,41 @@ function loadJson() {
   }
 }
 </script>
+	<p>This will load a Json file that I have put on the server similar to the JsonParse</p>
 	<button type="button" onclick="loadJson()">Json File</button>
 	<ul id="firstPlace"></ul>
+	
+	
+	<script>
+	function loadAPI(t) {
+  var x2http = new XMLHttpRequest();
+  var url = "http://www.omdbapi.com/?t=" + t + "&apikey=cd336b3";
+  
+  x2http.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		var out = JSON.parse(this.responseText);
+		printPoster(out);
+    }
+  };
+  x2http.open("GET", url, true);
+  x2http.send();
+  
+  function printPoster(p){
+	var image = p.Poster;
+      var place = document.getElementById('sign');
+      place.src = image;
 
+         }
+		 document.getElementById("title").value = " ";
+         document.getElementById("firstPlace").innerHTML = image;
+		 
+}
+	</script>
+		<p>This will load a Json file from an API and display the movie poster of you choice</p>
+		 <label>Put your movie here</label>
+         <input id="title" type="text" value="big trouble in little china"><br>
+		<button type="button" onclick=loadAPI(document.getElementById("title").value)>API File</button> <br>
+		<img src="https://openclipart.org/image/800px/svg_to_png/194077/Placeholder.png" alt="Sign" id="sign" width= "240" hight="600" ><br><br>
          <footer>
             <p>created by Skyler Hildreth</p>
          </footer>
