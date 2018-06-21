@@ -1,0 +1,111 @@
+body{
+	background-color:tan;
+	cursor: url(cursor.cur), auto;
+}
+nav {
+	display:flex;
+	text-align:center;
+	justify-content: space-around;
+	
+}
+ul {
+	list-style:none;
+}
+ul li {
+	padding: 1em;
+}
+a{
+	color: green;
+	font-family: 'Bowlby One SC', cursive;
+}
+h1 {
+	font-family: 'Press Start 2P', cursive;
+	text-align: center;
+	padding-bottom:1em;
+}
+footer{
+	
+	padding-top:10em;
+	text-align:center;
+}
+
+#object1 {
+	width: 200px;
+	height: 200px;
+	background-color:aqua;
+	animation-name: colorChange;
+	animation-duration: 6s;
+	animation-play-state: paused; 
+
+}
+#object1:hover {
+	animation-play-state:inherit;
+}
+@keyframes colorChange {
+    from {background-color: aqua;}
+    to {background-color: purple;}
+}
+
+#object2  {
+    width: 200px;
+    height: 200px;
+    background: green;
+    position: relative;
+    animation-duration: 1s;    
+    animation-fill-mode: both;
+	animation:	slide 3s linear infinite;
+	animation-play-state: paused;
+}
+#object2:hover {
+	animation-play-state:inherit;
+}
+
+@keyframes slide {
+    0% {left: 0px;}
+	50% {left: 700px;}
+	75% {left: 1px;}
+	100%{left: 0 px;}
+}
+
+#object3  {
+    width: 200px;
+    height: 200px;
+    background: purple;
+    position: relative;
+    animation-duration: 3s;    
+    animation-delay: 2s;
+    animation-fill-mode: both;
+	animation:	rotate 3s infinite;
+	animation-play-state: paused;
+}
+#object3:hover {
+	animation-play-state:running;
+}
+
+@keyframes rotate {
+
+	100%{transform: rotate(360deg);}
+}
+
+#object4  {
+    width: 200px;
+    height: 200px;
+    background: red;
+    position: relative;
+    animation-duration: 3s;    
+    animation-delay: 2s;
+    animation-fill-mode: both;
+	animation:	speed 3s linear infinite;
+	animation-play-state: paused;
+}
+#object4:hover {
+	animation-play-state:initial;
+}
+
+@keyframes speed {
+    0%   { left:0px;  }
+    25%  { left:200px; transform:rotate(-30deg);}
+    50%  { left:500px;transform:rotate(-50deg);}
+    75%  { left:1000px; transform:rotate(30deg);}
+    100% { left:0px;}
+}

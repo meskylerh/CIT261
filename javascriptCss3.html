@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us">
+   <head>
+      <meta charset="UTF-8">
+      <title>CSS javascript</title>
+      <meta name="description" content="contents of page">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="transform.css">
+   </head>
+   <body>
+      <h1>CSS javascript</h1>
+      <nav><a href= "index.html">Home</a></nav>
+      <h2>object</h2>
+      <p id="object">Object</p>
+      <form>
+         <input type="radio" id="opt0" name="degree" value="rotate" checked ="checked"> rotate<br>
+         <input type="radio" id="opt1" name="degree" value="skewY"> skewY<br>
+         <input type="radio" id="opt2" name="degree" value="skewX"> skewX<br>
+         <input type="radio" id="opt3" name="degree" value="scaleY"> scaleY<br>
+         <input type="radio" id="opt4" name="degree" value="scaleX"> scaleX<br>
+         <label>Enter a Degree</label><br>
+         <label>If scale selected enter a decimal such as (1.6)</label><br>
+         <input id="change" type="text" value="30"><br>
+         <button type= "button" onclick=transformObject(document.getElementById("change").value)>Submit</button>
+      </form>
+      <script>
+         var z = document.getElementsByName("degree");
+         
+         function transformObject(ab){
+         
+         for (var i = 0, length = z.length; i < length; i++)
+         	if (z[i].checked && i < 3){
+           var x = document.getElementById("opt" + i ).value;
+         
+         var element = document.getElementById("object");
+         element.style.WebkitTransform = x + "("+ ab + "deg)";
+         element.style.msTransform = x + "("+ ab + "deg)";
+         element.style.transform = x + "("+ ab + "deg)";
+         
+         }
+         else if (z[i].checked && i >= 3){
+           var x = document.getElementById("opt" + i ).value;
+         
+         var element = document.getElementById("object");
+         element.style.WebkitTransform = x + "("+ ab + ")";
+         element.style.msTransform = x + "("+ ab + ")";
+         element.style.transform = x + "("+ ab + ")";
+         
+         }
+         }
+         
+      </script>
+      <section>
+         <footer>
+            <p>created by Skyler Hildreth</p>
+         </footer>
+      </section>
+   </body>
+</html>
