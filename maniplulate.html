@@ -8,8 +8,8 @@
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
    <body>
-      <h1>CSS manipulate</h1>
-	       <nav><a href= "index.html">Home</a></nav>
+      <h1 id = "title" >CSS manipulate</h1>
+	       <nav id= "nav"><a href= "index.html">Home</a></nav>
 		   
 
 		   
@@ -29,7 +29,17 @@
 		<label>Change the size of the text by px</label>
          <input id="textSize" type="text" value="12"></input>
 		<button onclick=changeTextSize(document.getElementById("textSize").value)> Change  </button> <br>
-		           <footer>
+		<label>change the cursor to spiderman</label>
+		<button onclick=changeCursor()>  NANANANA Spiderman  </button> <br>
+		<button onclick=changeCursorBack()>  Ironman </button>
+		
+		<h3>Lets Cubbie This page up</h3>
+		<p>ready Click away</P>
+		<button onclick=cubsBackground()>  Cubbies </button>
+		
+		
+		
+		 <footer id="footer">
             <p>created by Skyler Hildreth</p>
          </footer>
 	
@@ -43,6 +53,49 @@
 	var element = document.getElementById("paragraph");
 	element.style.fontSize = ts + "px";
 		}
+		
+	function changeCursor(){
+	
+	document.body.style.cursor = "url(cursor1.cur), auto";
+		}
+	function changeCursorBack(){
+	
+	document.body.style.cursor = "url(cursor.cur), auto";
+		}
+	function cubsBackground(){
+	document.body.style.backgroundColor= "red";
+	document.body.style.backgroundPosition= "50% 157px";
+	document.body.style.backgroundRepeat= "no-Repeat";
+	document.body.style.backgroundImage= "url('davidRoss.jpg')";
+	document.body.style.backgroundSize= "900px 1200px";
+	
+	var element = document.getElementById("title");
+	element.style.backgroundImage = "url('cubs_banner.jpg')";
+	element.style.backgroundSize = "100% 75%"; 
+	element.style.height = "150px";
+	element.style.backgroundRepeat= "no-Repeat";
+		
+	var element2 = document.getElementById("paragraph");
+	element2.style.backgroundColor = "white";
+	element2.style.height = "300px";
+	element2.style.width = "250px";
+	
+	var element3 = document.getElementById("footer");
+	element3.style.backgroundImage = "url('flag.jpg')";
+	element3.style.position = "fixed";
+	element3.style.bottom = "40%";
+	element3.style.right= "15%";
+	element3.style.backgroundRepeat= "no-Repeat";
+	element3.style.height= "100px";
+	element3.style.width= "150px";
+	element3.style.color= "white";
+	
+	var element4 = document.getElementById("nav");
+	element4.style.backgroundColor = "white";
+	}
+	
+
+		
 	</script>
    </body>
 </html>
