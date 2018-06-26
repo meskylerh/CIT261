@@ -84,19 +84,19 @@
 					document.getElementById("theMessage").innerHTML = localStorage.getItem("message");
 					}
 					else { 
-					document.getElementById("theMessage").innerHTML = "Do you want to try again";
+					document.getElementById("theMessage").innerHTML = "Do you want to try again?";
 					
 					}		
 			
 			}
 	else {
-document.getElementById("theMessage").innerHTML = "Do you want to try again";		
+document.getElementById("theMessage").innerHTML = "Do you want to try again?";		
 	}
 	}
 	
 	function cheat(){
-	document.getElementById("usernamePlaceholder").innerHTML = "username " + localStorage.getItem("username");
-	document.getElementById("passwordPlaceholder").innerHTML = "Password " + localStorage.getItem("password");
+	document.getElementById("usernamePlaceholder").innerHTML = "username: " + localStorage.getItem("username");
+	document.getElementById("passwordPlaceholder").innerHTML = "Password: " + localStorage.getItem("password");
 	}
    </script>
    </body>
