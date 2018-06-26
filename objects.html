@@ -14,13 +14,12 @@
 	  <h2>Creating an object</h2>
 	  <p> And obeject is just a variable with sub variable attached to it and called using the obj.subvar<p><br>
 	  <pre> here is an object with my information
-	  	var person = {
-		firstName : "Skyler"
-		lastName : "Hildreth"
-		age : "30"
+	  	function person(f, l, a) = {
+		this.firstName = "f";
+		this.lastName = "l";
+		this.age = "a";
 	}
 	  </pre>
-	  <p>I can call it and make a sentance</p>
 	  <p id="info"></p>
 	  <h3>Method</h3>
 	  <p>we will alter the first object and add a function</p>
@@ -34,100 +33,44 @@
 	};
 	now we will call it.
 	using:
+	var me = new person("skyler", "hildreth", "30");
 	document.getElementById("method").innerHTML = personMethod.description();
 	  </pre>
 	  
 	  <p id="method"></p>
 	  <h3>lets do some inheritance</h3>
-	  <pre> here is the object a box 
-	function box(xAxis, yAxis, color){
-   this.x = xAxis;
-   this.y = yaxis;
-   this.color = color; 
-   }
+	<pre>
+	lets make a prototype
+	person.prototype.fullName = function() {
+    return this.firstName + " " + this.lastName
+};
+	var me = new person("skyler", "hildreth", "30");
+	document.getElementById("proto").innerHTML = me.fullName();
+	
    </pre>
-   <h4>so lets get it going</h4>
+   <h4>result</h4>
+   <p id="proto"></p>
 
- <label>here are some predetermind values<label><br>
- <p>here the first: var mybox1 = new box("300", "1200", "green")</p>
- <pre> use: 
- 	function first(){
-	var mybox1 = new box("300", "1200", "green");
-	var element = document.getElementById("object");
-	element.style.left = mybox1.x + "px";
-	element.style.top = mybox1.y + "px";
-	element.style.backgroundColor = mybox1.color;
-	}
 	</pre>
- <button onclick=first()>onebox</button>
- 
- <p>here the Second: var mybox2 = new box("0", "0", "blue")</p>
-  <pre> use: 
-	function second(){
-	var mybox2 = new box("0", "0", "blue");
-	var element = document.getElementById("object");
-	element.style.left = mybox2.x + "px";
-	element.style.top = mybox2.y + "px";
-	element.style.backgroundColor = mybox2.color;
-	}
-	</pre>
- <button onclick=second()>secondBox</button>
- 
-<p>here the last: var mybox3 = new box("500", "600", "purple")</p>
- <pre> use: 
-	function last(){
-	var mybox3 = new box("500", "600", "purple");
-	var element = document.getElementById("object");
-	element.style.left = mybox3.x + "px";
-	element.style.top = mybox3.y + "px";
-	element.style.backgroundColor = mybox3.color;
-	}
-	</pre>
- <button onclick=last()>lastBox</button><br>
-   <p>we are going to move around this square with an object.</p>
-   	  <p id="object"></p>
 
 	  
 <script>
+	 function person1(f, l, a) {
+		this.firstName = f;
+		this.lastName = l;
+		this.age = a;
+	}
+	 person1.prototype.fullName = function() {
+    return this.firstName + " " + this.lastName
+};
+	var me = new person1("skyler", "hildreth", "30");
+	document.getElementById("proto").innerHTML = me.fullName();
 	const person = {
 		firstName : "Skyler",
 		lastName : "Hildreth",
 		age : "30",
 	};
-	var sentance= "Hello my name is " + person.firstName + " " + person.lastName + " I am " + person.age + " years old.";
-	document.getElementById("info").innerHTML = sentance;
-   </script>
-   <script>
-   function box(xAxis, yAxis, color){
-   this.x = xAxis;
-   this.y = yAxis;
-   this.color = color;
-   }
-   
-	function first(){
-	var mybox1 = new box("300", "1200", "green");
-	var element = document.getElementById("object");
-	element.style.left = mybox1.x + "px";
-	element.style.top = mybox1.y + "px";
-	element.style.backgroundColor = mybox1.color;
-	}
-	
-	function second(){
-	var mybox2 = new box("0", "0", "blue");
-	var element = document.getElementById("object");
-	element.style.left = mybox2.x + "px";
-	element.style.top = mybox2.y + "px";
-	element.style.backgroundColor = mybox2.color;
-	}
-	
-	function last(){
-	var mybox3 = new box("500", "600", "purple");
-	var element = document.getElementById("object");
-	element.style.left = mybox3.x + "px";
-	element.style.top = mybox3.y + "px";
-	element.style.backgroundColor = mybox3.color;
-	}
-	
+ 
 	var personMethod = {
 		firstName : "Skyler",
 		lastName : "Hildreth",
@@ -138,6 +81,7 @@
 	};
    document.getElementById("method").innerHTML = personMethod.description();
    
+
    </script>
 	  <section>
          <footer>
