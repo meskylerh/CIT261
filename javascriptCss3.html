@@ -23,6 +23,10 @@
          <input id="change" type="text" value="30"><br>
          <button type= "button" onclick=transformObject(document.getElementById("change").value)>Submit</button>
       </form>
+	  
+	   <h3>Now for the last changing animation with an event</h3>
+	   <p> press the left arrow to spin left click the right arrow to spin right</p>
+	   <img id="spinningArrow" src="Arrow_Up.png" alt="star">
       <script>
          var z = document.getElementsByName("degree");
          
@@ -48,6 +52,25 @@
          
          }
          }
+		 
+	 document.onkeydown = function(e) {
+		switch(e.key){
+		    case 'ArrowLeft':
+            var element = document.getElementById("spinningArrow");
+			element.style.WebkitAnimationName = "rotateLeft";
+			element.style.animationName = "rotateLeft";
+			element.style.animationPlayState= "initial";
+			
+            break;
+			 case 'ArrowRight':
+            var element = document.getElementById("spinningArrow");
+			element.style.WebkitAnimationName = "rotateRight";
+			element.style.animationName = "rotateRight";
+			element.style.animationPlayState= "running";
+			
+            break;
+		}
+		};
          
       </script>
       <section>

@@ -2,20 +2,91 @@
 <html lang="en-us">
    <head>
       <meta charset="UTF-8">
-      <title>CSS javascript</title>
+      <title>Events</title>
       <meta name="description" content="contents of page">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" type="text/css" href="transform.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
    </head>
    <body>
-      <h1>CSS javascript</h1>
+
+      <h1>Events</h1>
       <nav><a href= "index.html">Home</a></nav>
-	       <section>
-		   
-		   
+	  <h3>Lets go the Onclick</h3>
+	  <p id="change1">here is some text click the button to change</p>
+	   <button type= "button" onclick=changeText()>change</button>
+	   
+	   <h3>Now for onKeyDown and Onkeyup</h3>
+	   <input id="change2" type="text">
+	   
+	   <h3>Now for some onload</h3>
+	   <p>lets load a star and get an alert when it has loaded.</p>
+	   <button type= "button" onclick=addImage()>change</button><br>
+	   <img src=" " alt="star" id="change3" onload="loadedImage()"><br><br>
+	   
+	   <h3>Now for some mobile Ontouchstart</h3>
+	   <p>touch the square(only works with mobile)</p>
+	   <p ontouchstart="sayTouched()" id="moveObj2"></p>
+	   <strong id="change4"></strong>
+	   
+	   <h3>Now for the last changing animation</h3>
+	   <p> press the left arrow to spin left click the right arrow to spin right</p>
+	   <img id="spinningArrow" src="Arrow_Up.png" alt="star">
+	   
+	   
+
+	  <section>
          <footer>
             <p>created by Skyler Hildreth</p>
          </footer>
       </section>
+	  
+	  <script>
+	  document.getElementById("change2").onkeydown = function() {keyDown()};
+	document.getElementById("change2").onkeyup = function() {keyUp()};
+	  function changeText(){
+		document.getElementById("change1").innerHTML = "see I changed! :)";
+	  }
+	  
+	  function keyDown(){
+	  document.getElementById("change2").style.backgroundColor = "blue";
+	}
+	  
+	 function keyUp(){
+	  document.getElementById("change2").style.backgroundColor = "white";
+	  }
+	  
+	  function addImage(){
+	  var image = document.getElementById('change3');
+      image.src = "Star.png"
+	  }
+	  
+	  function loadedImage(){
+	  alert("the star is loaded");
+	  }
+	  
+	  function sayTouched() {
+	  document.getElementById("change4").innerHTML = "you touched me";
+	  }
+	  document.onkeydown = function(e) {
+		switch(e.key){
+		    case 'ArrowLeft':
+            var element = document.getElementById("spinningArrow");
+			element.style.WebkitAnimationName = "rotateLeft";
+			element.style.animationName = "rotateLeft";
+			element.style.animationPlayState= "initial";
+			
+            break;
+			 case 'ArrowRight':
+            var element = document.getElementById("spinningArrow");
+			element.style.WebkitAnimationName = "rotateRight";
+			element.style.animationName = "rotateRight";
+			element.style.animationPlayState= "running";
+			
+            break;
+		}
+		};
+	
+	  
+	  </script>
    </body>
 </html>

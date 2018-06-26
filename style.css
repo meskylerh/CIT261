@@ -31,3 +31,39 @@ footer{
 table, th, td {
     border: 1px solid black;
 }
+#moveObj {
+width:50px;
+height: 50px;
+background-color:blue;
+}
+
+#moveObj2 {
+width:50px;
+height: 50px;
+background-color:green;
+}
+
+#spinningArrow {
+    animation-duration: 3s;    
+    animation-delay: 2s;
+    animation-fill-mode: both;
+	animation:	rotate 3s infinite;
+	animation-play-state: paused;
+}
+
+@keyframes rotateLeft {
+
+	100%{transform: rotate(-360deg);}
+}
+
+@keyframes rotateRight {
+
+	100%{transform: rotate(360deg);}
+}
+
+#object {
+	width: 200px;
+	height: 120px;
+	position: absolute;
+	}
+

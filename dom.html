@@ -25,6 +25,15 @@
          var list = document.getElementById("theList");
          list.removeChild(list.lastChild);
          }
+		 
+		 function insertBeforeList(text){
+         var list = document.createElement("LI");
+         var node = document.createTextNode(text);
+         list.appendChild(node);
+         var element = document.getElementById("theList");
+         element.insertBefore(list, element.childNodes[0]);
+         }      
+      </script>
       </script>
       <h1>Dom Manipulation</h1>
       <nav><a href= "index.html">Home</a></nav>
@@ -34,10 +43,11 @@
          <h3>Here is a place to put a wishlist</h3>
          <label>what do you wish for</label>
          <input id="wish" type="text" value="An A"><br>
-         <button onclick=wishList(document.getElementById("wish").value)>Add your wish</button>
-         <label>Dont like what you put:</label><button onclick=removeFromList()>Fix it</button>
+         <button onclick=wishList(document.getElementById("wish").value)>Add your wish</button><br>
+         <label>Dont like what you put:</label><br><button onclick=removeFromList()>Fix it</button><br>
+		 <label>Thought of something you want on top of your list</label><br><button onclick=insertBeforeList(document.getElementById("wish").value)>Insert before</button>
          <br>
-         <ul id="theList"></ul>
+         <ul style="position:absolute; right:15%; top:20%;" id="theList"></ul>
       </section>
       <footer>
          <p>created by Skyler Hildreth</p>

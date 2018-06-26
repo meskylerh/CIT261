@@ -2,15 +2,69 @@
 <html lang="en-us">
    <head>
       <meta charset="UTF-8">
-      <title>Function creation</title>
+      <title>CSS javascript</title>
       <meta name="description" content="contents of page">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="style.css">
    </head>
    <body>
-      <h1>Function creation</h1>
-	       <nav><a href= "index.html">Home</a></nav>
-		         <section>
+
+      <h1>CSS javascript</h1>
+      <nav><a href= "index.html">Home</a></nav>
+	  <h2>Creating an object</h2>
+	  <p> And obeject is just a variable with sub variable attached to it and called using the obj.subvar<p><br>
+	  <pre> here is an object with my information
+	  	var person = {
+		firstname : "Skyler"
+		lastName : "Hildreth"
+		age : "30"
+	}
+	  </pre>
+	  <p>I can call it and make a sentance</p>
+	  <p id="info"></p>
+	  <h3>lets do some inheritance</h3>
+	  <pre> here is the object a box 
+ function box(xAxis, yAxis, color){
+   this.x = xAxis;
+   this.y = yaxis;
+   this.color = color; 
+   }
+   </pre>
+   <h4>so lets get it going</h4>
+   <label>input your cordinates and color such as "150", "300",  </label><br>
+      <input id="values" type="text" value="0, 0, green">
+      <button onclick=createBox(document.getElementById("values").value)>guess</button><br>
+	  <p id="object"></p>
+	  
+<script>
+	const person = {
+		firstName : "Skyler",
+		lastName : "Hildreth",
+		age : "30",
+	};
+	var sentance= "Hello my name is " + person.firstName + " " + person.lastName + " I am " + person.age + " years old.";
+	document.getElementById("info").innerHTML = sentance;
+   </script>
+   <script>
+   function box(xAxis, yAxis, color){
+   this.x = xAxis;
+   this.y = yAxis;
+   this.color = color;
+   }
+   
+   function createBox(values){
+   var myBox = new box(values);
+   var element = document.getElementById("object");
+   element.style.backgroundColor = myBox.color;
+   element.style.left = myBox.xAxis;
+   element.style.top = myBox.yAxis;
+   alert(myBox);
+	
+   }
+   
+   
+   </script>
+	  <section>
          <footer>
             <p>created by Skyler Hildreth</p>
          </footer>
