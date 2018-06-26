@@ -25,7 +25,7 @@
 		 
 		 <label> click to see message</label><br>
 		 <button onclick=seeStore()>see message</button><br><br>
-		 <h2>the message will be here:</h2>
+		 <h2 id="messArea">The message will be here:</h2>
 		 <h3 id="theMessage"></h3>
 		 
 		 <label>Need to cheat forgot you username and password</label><br>
@@ -84,13 +84,13 @@
 					document.getElementById("theMessage").innerHTML = localStorage.getItem("message");
 					}
 					else { 
-					document.getElementById("theMessage").innerHTML = "Do you want to try again?";
+					document.getElementById("theMessage").innerHTML = "Do you want to try again? Password Incorrect";
 					
 					}		
 			
 			}
 	else {
-document.getElementById("theMessage").innerHTML = "Do you want to try again?";		
+document.getElementById("theMessage").innerHTML = "Do you want to try again? Username Incorrect";		
 	}
 	}
 	

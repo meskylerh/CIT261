@@ -68,3 +68,15 @@ background-color:green;
 	background-color: white;
 	}
 
+#theMessage{
+padding-left: 300px;
+	top: 40%;
+	position:absolute;
+}
+#messArea{
+padding-left: 300px;
+top: 35%;
+position: absolute;
+}
+
+
