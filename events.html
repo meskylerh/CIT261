@@ -32,8 +32,11 @@
 	   <p> press the left arrow to spin left click the right arrow to spin right</p>
 	   <img id="spinningArrow" src="Arrow_Up.png" alt="star">
 	   
-	   
-
+	   <h3>hover for transition event</h3>
+	   <p id= "paragraph1">
+		   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt felis facilisis ultricies
+		   fringilla. Curabitur quis justo ipsum.
+		   </p>
 	  <section>
          <footer>
             <p>created by Skyler Hildreth</p>
@@ -85,7 +88,23 @@
             break;
 		}
 		};
-	
+		document.getElementById("paragraph1").addEventListener("webkitTransitionEnd", paragraphChang);
+		document.getElementById("paragraph1").addEventListener("transitionend", paragraphChang);
+		
+		function paragraphChang() {
+		this.style.backgroundColor = "green";
+		}
+		
+		document.getElementById("change4").addEventListener("webkitAnimationStart", smoking);
+		document.getElementById("change4").addEventListener("animationstart", smoking);
+		
+		function smoking(){
+		var x = this.left;
+		var y = this.top;
+		 var image = document.getElementById('smoke');
+         image.src = "flame.png"
+		 
+		}
 	  
 	  </script>
    </body>

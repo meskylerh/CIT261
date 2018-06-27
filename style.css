@@ -79,4 +79,38 @@ top: 35%;
 position: absolute;
 }
 
+#paragraph1 {
+	width: 300px;
+	height: 100px;
+    -webkit-transition: width 2s; 
+    transition: width 2s;
+}
+
+#paragraph1:hover {
+width: 100%;
+}
+
+#object4  {
+    width: 200px;
+    height: 200px;
+    background: red;
+    position: relative;
+    animation-duration: 3s;    
+    animation-delay: 2s;
+    animation-fill-mode: both;
+	animation:	speed 3s linear infinite;
+	animation-play-state: paused;
+}
+#object4:hover {
+	animation-play-state:initial;
+}
+
+@keyframes speed {
+    0%   { left:0px;  }
+    25%  { left:150px; transform:rotate(-30deg);}
+    50%  { left:250px;transform:rotate(-50deg);}
+    75%  { left:500px; transform:rotate(30deg);}
+    100% { left:0px;}
+}
+
 
