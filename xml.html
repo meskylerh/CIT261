@@ -57,8 +57,11 @@ function loadJson() {
   
   function printPoster(p){
 	var image = p.Poster;
+	var ratings = p.Ratings[1];
+	document.getElementById("moreInfo").innerHTML = ratings;
       var place = document.getElementById('sign');
       place.src = image;
+	  
 
          }
 		 document.getElementById("title").value = " ";
@@ -70,7 +73,8 @@ function loadJson() {
          <input id="title" type="text" value="big trouble in little china"><br>
 		<button type="button" onclick=loadAPI(document.getElementById("title").value)>API File</button> <br>
 		<img src="https://openclipart.org/image/800px/svg_to_png/194077/Placeholder.png" alt="Sign" id="sign" width= "240" hight="600" ><br><br>
-         <footer>
+<p id="moreInfo"></p>
+		 <footer>
             <p>created by Skyler Hildreth</p>
          </footer>
 
