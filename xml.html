@@ -57,7 +57,7 @@ function loadJson() {
   
   function printPoster(p){
 	var image = p.Poster;
-	var ratings = p.Ratings[1];
+	var ratings = p.Ratings[0].Value;
 	document.getElementById("moreInfo").innerHTML = ratings;
       var place = document.getElementById('sign');
       place.src = image;
