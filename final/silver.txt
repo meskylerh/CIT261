@@ -38,7 +38,7 @@
     { "image" : "",
       "title"  : "2 oz Silver Round - Destiny Knight: Duncan The Blacksmith",
       "description" : "This 2 oz Silver round from Macian Enterprises carries the inscription “Destiny Is Not A Matter of Chance, It Is A Matter Of Choice” paying homage to the Scottish Knights who perished in the war against the Spanish in 1588.",
-      "price" : "$41.20",
-    }, 
+      "price" : "$41.20"
+    } 
   ]
 }
