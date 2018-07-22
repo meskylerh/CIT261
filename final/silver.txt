@@ -32,7 +32,7 @@
     },
     { "image" : " ",
       "title"  : "2 oz Silver Round - Destiny Knight: The Raven",
-      "description" : "Paying homage to the Scottish Knights who perished in the war against the Spanish in 1588, this 2 oz Silver round from Macian Enterprises carries the inscription “Destiny Is Not A Matter of Chance, It Is A Matter Of Choice.",
+      "description" : "Paying homage to the Scottish Knights who perished in the war against the Spanish in 1588, this 2 oz Silver round from Macian Enterprises carries the inscription Destiny Is Not A Matter of Chance, It Is A Matter Of Choice.",
       "price" : "$47.20",
     },
     { "image" : " ",
