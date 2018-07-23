@@ -33,7 +33,7 @@ function loadJson() {
          	text += "<ul id=" + '"' + "sitems" + '"' + ">" + "<li>" + "<img src="+op.silver[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
 			+ "<br>" +"<li>" + "<strong>"+ op.silver[i].title +"</strong>" +"</li>" +
          	"<li>" + op.silver[i].description + "</li>" +
-         	 "<li> "+ "<strong>" op.silver[i].price + "<strong>" + "</li>" + "</ul>";
+         	 "<li> "+ "<strong>" + op.silver[i].price + "<strong>" + "</li>" + "</ul>";
          }
          document.getElementById("silverList").innerHTML = text;
   }
