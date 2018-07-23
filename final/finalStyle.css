@@ -21,4 +21,5 @@ li {
 }
 #sitems{
 	display: flex;
+	flex-direction:column;
 }
