@@ -14,32 +14,30 @@
         <![endif]--> 
     </head>
 <script>
-	function loadAPI(t) {
-  var x2http = new XMLHttpRequest();
-  var url = "https://www.quandl.com/api/v3/datasets/LBMA/SILVER.json?api_key=p3MJevMqLZuxHDZ8TEtq";
+function loadJson() {
+  var xhttp = new XMLHttpRequest();
+  var file = "silver.txt";
   
-  x2http.onreadystatechange = function() {
+  xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-		var out = JSON.parse(this.responseText);
-		showSpot(out);
+		var output = JSON.parse(this.responseText);
+		printOut(output);
     }
   };
-  x2http.open("GET", url, true);
-  x2http.send();
+  xhttp.open("GET", file, true);
+  xhttp.send();
   
-  function showSpot(spot){
-		var date = spot.dataset.data[0][0];
-		var total = spot.dataset.data[0][1];
-		var usd = spot.column_names[1];
-		var f = spot.frequency;
-		
-		document.getElementById("spotDate").innerHTML = date;
-		document.getElementById("frequncy").innerHTML = f;
-		document.getElementById("spotName").innerHTML = usd;
-		document.getElementById("total").innerHTML = total;
+  function printOut(op){
+   var text = " ";
+         for (var i = 0; i < op.silver.length; i++){
+         	text += "<ul id=" + '"' + "sitems" + '"' + ">" + "<li>" + "<img src="+op.silver[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
+			 "<li>" + "<strong>"+ op.silver[i].title + "</strong>" +"</li>" +
+         	"<li>" + op.silver[i].description + "</li>" +
+         	 "<li> "+ "<strong>" + op.silver[i].price + "</strong>" + "</li>" + "</ul>";
          }
-		 
-}
+         document.getElementById("silverList").innerHTML = text;
+  }
+  }
   </script>
 	<body onload="loadJson()">
 		
@@ -53,15 +51,12 @@
 <ul>
 	<li class="home"><a href="/">Home</a></li>
 	<li class="gold"><a href="#gold">Gold</a> 
-	<li class=""> <a href="silver.html">Silver</a> 
+	<li class=""> <a href="#silver">Silver</a> 
 </ul>
     </header>
 	<div id="container">
-	<section id="psopt">
-	<p id="spotDate"></p>
-	<p id="frequency"></p>
-	<p id="spotName"></p>
-	<p id="total"></p>
+	<section id="silverList">
+	<p>hh</p>
 	</section>
 	</div>
 	    <footer>
