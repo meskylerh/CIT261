@@ -22,7 +22,7 @@
     if (this.readyState == 4 && this.status == 200) {
 		var out = JSON.parse(this.responseText);
 		showSpot(out);
-		makeTable(out);
+
     }
   };
   x2http.open("GET", url, true);
