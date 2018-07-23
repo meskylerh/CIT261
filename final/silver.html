@@ -30,7 +30,8 @@ function loadJson() {
   function printOut(op){
    var text = " ";
          for (var i = 0; i < op.silver.length; i++){
-         	text += "<ul id=" + '"' + "sitems" + '"' + ">" + "<li>" + "<img src="+op.silver[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
+         	text += "<ul class=" + '"'+ "metalitems" + '"' + "id=" + '"' + "sitems" + i +  '"' +"ontouchend=" + '"' "returnn(sitems"+ i + ")" + '"'  +"ontouchstart=" + '"' "zoom(sitems" + i ")" + '"' +">" + "<li>" +
+			"<img src="+op.silver[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
 			 "<li>" + "<strong>"+ op.silver[i].title + "</strong>" +"</li>" +
          	"<li>" + op.silver[i].description + "</li>" +
          	 "<li> "+ "<strong>" + op.silver[i].price + "</strong>" + "</li>" + "</ul>";
@@ -63,6 +64,12 @@ function loadJson() {
 
 	
 	<script>
+	function zoom(item){
+	document.getElementById(item).style.transform.scale= 1.2;
+	}
+	function returnn(id){
+		document.getElementById(item).style.transform.scale= 1;
+	}
 function openNav() {
     document.getElementById("nav").style.width = "250px";
 }

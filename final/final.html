@@ -38,7 +38,7 @@
 		document.getElementById("frequency").innerHTML = freq;
 		document.getElementById("spotName").innerHTML = usd;
 		document.getElementById("total").innerHTML = total;
-		var table = " ";
+		var table = "<tr> <th> Date"+ "</th>" + "<th>Currency</th>" +"<th>Spot</th>";
 		 for (var i = 0; i < 10; i++){
 		 table += "<tr>" + "<td>" + spot.dataset.data[i][0] + "</td>" +
 					"<td>" + spot.dataset.column_names[1] + "</td>" +
