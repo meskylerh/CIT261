@@ -1,0 +1,44 @@
+﻿{ "gold" :
+  [
+    { "image" : "152851_Slab.jpg",
+      "title"  : "2018 1 oz Gold American Eagle",
+      "description" : "The Gold American Eagle is based on Augustus Saint-Gaudens 1907 $20 Gold Double Eagle, showing a proud Lady Liberty. With an iconic design and 1 oz of Gold, the 2018 Gold Eagle combines collectibility with bullion investment appeal.",
+      "price" : "$1355.93"
+    },
+    { "image" : "bbb.jpg",
+      "title"  : "2018 1 oz Gold Buffalo",
+      "description" : "The Gold Buffalo was the first coin from the United States Mint that contains 1 oz of .9999 fine Gold. This beautiful coin is popular worldwide and is highly recognizable with its well-known Buffalo Nickel design.",
+      "price" : "$1356.14"
+    },
+    { "image" : "154328_Slab.jpg",
+      "title"  : "2018 Australia 1 oz Gold Lunar Dog",
+      "description" : "Celebrate the Year of the Dog with these incredible 1 oz Gold coins featuring a mintage of 30,000 coins. Each coin contains .9999 fine Gold, providing investor value beyond the collector appeal.",
+      "price" : "$1376.24"
+    },
+    { "image" : "161557_slab.jpg",
+      "title"  : "2018 Australia 1 oz Gold Swan",
+      "description" : "Exquisitely crafted, this Brilliant Uncirculated Gold Swan builds on the success of the Gold bullion Swan first launched in 2017. This BU Swan continues the limited mintage of 5,000 coins made of .9999 fine Gold.",
+      "price" : "$1366.65"
+    }, 
+    { "image" : "163305_Slab.jpg",
+      "title"  : "2018 Great Britain 1 oz Gold Queen's Beasts The Bull",
+      "description" : "The fifth release in the Queen's Beasts series features the Black Bull of Clarence and another inspirational design by Jody Clark..",
+      "price" : "$1340.82"
+    },
+    { "image" : "152536_Obv.jpg",
+      "title"  : "2018 Great Britain 1 oz Gold Queen's Beasts The Unicorn",
+      "description" : "The highly anticipated fourth release in the Queen's Beasts series features the Unicorn of Scotland.",
+      "price" : "$1340.82"
+    },
+    { "image" : "117682_Slab.jpg",
+      "title"  : "2017 Great Britain 1 oz Gold Queen's Beasts The Dragon",
+      "description" : "Featuring the Red Dragon of The Wales, the third release in the popular new 10-coin series is sure to impress Queen's Beasts enthusiasts.",
+      "price" : "$1387.39"
+    },
+    { "image" : "96671_Slab.jpg",
+      "title"  : "2016 Great Britain 1 oz Gold Queen's Beasts The Lion",
+      "description" : "The first release in an exciting 10-coin series! The Queen’s Beasts celebrates the British Monarchy and the centuries of fascinating heraldry that has been a part of their story.",
+      "price" : "$1387.39"
+    } 
+  ]
+}
