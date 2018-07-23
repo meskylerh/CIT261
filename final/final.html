@@ -30,7 +30,7 @@ function loadJson() {
   function printOut(op){
    var text = " ";
          for (var i = 0; i < op.silver.length; i++){
-         	text += "<li>" + "<img src="+op.silver[i].image + "height='150' width='150'>" + " " + "<strong>"+ op.silver[i].title +"</strong>" +"</li>" +
+         	text += "<li>" + "<img src="+op.silver[i].image + "height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " + "<strong>"+ op.silver[i].title +"</strong>" +"</li>" +
          	"<li>" + op.silver[i].description + "</li>" +
          	"<li>" + op.silver[i].price + "</li>";
          }
