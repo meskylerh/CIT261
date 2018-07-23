@@ -90,3 +90,13 @@ table, th, td {
 	border:solid thick;
 	text-align:center;
 }
+
+#psopt {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-direction:column;
+}
+#switchButton {
+	text-align: center;
+}

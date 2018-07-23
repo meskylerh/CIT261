@@ -32,13 +32,14 @@
 		var date = spot.dataset.data[0][0];
 		var total = spot.dataset.data[0][1];
 		var usd = spot.dataset.column_names[1];
-		var freq = spot.dataset.frequency;
+		var type = spot.dataset.dataset_code;
 		var change = (spot.dataset.data[0][1] - spot.dataset.data[1][1]).toFixed(2);
 		
 		document.getElementById("spotDate").innerHTML = date;
 		document.getElementById("changeYesterday").innerHTML = change;
 		document.getElementById("spotName").innerHTML = usd;
 		document.getElementById("total").innerHTML = total;
+		document.getElementById("metalType").innerHTML = type;
 		var table = "<tr> <th> Date"+ "</th>" + "<th>Currency</th>" +"<th>Spot</th>";
 		 for (var i = 0; i < 10; i++){
 		 table += "<tr>" + "<td>" + spot.dataset.data[i][0] + "</td>" +
@@ -47,13 +48,51 @@
 		 }
 		 document.getElementById("10day").innerHTML = table;
          }
+		document.getElementById("daily").style.backgroundColor = "#cdcdcd";
+}
 
+	function loadAPIG() {
+  var x2http = new XMLHttpRequest();
+  var url = "https://www.quandl.com/api/v3/datasets/LBMA/GOLD.json?api_key=p3MJevMqLZuxHDZ8TEtq";
+  
+  x2http.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		var out = JSON.parse(this.responseText);
+		showSpot(out);
+
+    }
+  };
+  x2http.open("GET", url, true);
+  x2http.send();
+  
+  function showSpot(spot){
+		var date = spot.dataset.data[0][0];
+		var total = spot.dataset.data[0][1];
+		var usd = spot.dataset.column_names[1];
+		var type = spot.dataset.dataset_code;
+		var change = (spot.dataset.data[0][1] - spot.dataset.data[1][1]).toFixed(2);
+		
+		document.getElementById("spotDate").innerHTML = date;
+		document.getElementById("changeYesterday").innerHTML = change;
+		document.getElementById("spotName").innerHTML = usd;
+		document.getElementById("total").innerHTML = total;
+		document.getElementById("metalType").innerHTML = type;
+		var table = "<tr> <th> Date"+ "</th>" + "<th>Currency</th>" +"<th>Spot</th>";
+		 for (var i = 0; i < 10; i++){
+		 table += "<tr>" + "<td>" + spot.dataset.data[i][0] + "</td>" +
+					"<td>" + spot.dataset.column_names[1] + "</td>" +
+					"<td>" + spot.dataset.data[i][1] + "</td>" + "</tr>";
+		 }
+		 document.getElementById("10day").innerHTML = table;
+         }
+	document.getElementById("daily").style.backgroundColor = "#CCAC00";
 }
   </script>
 	<body onload="loadAPI()">
 		
     <header>
 <span style="font-size: 50px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<h3>SkyMetals</h3>
 <div class="logo">
 <img src="http://www.brandcrowd.com/gallery/brands/pictures/picture14092353957857.jpg" width="60" height="60">
 </div>
@@ -68,7 +107,9 @@
   
 	<div id="container">
 	<h1>Check daily spot prices</h1>
+	
 	<section id="psopt">
+	<h2 id="metalType"></h2>
 	<div id="daily">
 	<p id="spotDate"></p>
 	<p id="frequency"></p>
@@ -79,9 +120,58 @@
 	<h2>10 day spot change</h2>
 	<table id="10day"></table>
 	</section>
+	<br>
+	<div id="switchButton">
+	<button  onclick="loadAPI()">Silver</button>
+	<button  onclick="loadAPIG()">Gold</button>
+	</div>
+	
+	<h2>Check out our silver and gold products</h2>
+	<p>To enquire of a product sign up by entering and username password and email</p>
+			<label>Enter a username</label><br>
+			<input id="userName" type="text" value=""><br>
+			<label>Enter a password</label><br>
+			<input id="password" type="text" value=""><br>
+			<label>Enter your Email  </label><br>
+			<input id="email" type="text" value=""><br>
+			<button onclick='addemail(document.getElementById("email").value);addPassword(document.getElementById("password").value);addUsername(document.getElementById("userName").value)'>Done</button><br><br>
+			<h3 id="w"></h3>
 	</div>
 
 	<script>
+	 function addUsername(Value) {
+   
+    if(typeof(Storage) !== "undefined") {
+			var username = Value;
+			localStorage.setItem("username", username);
+        }
+		else {        
+		alert( "Sorry, your browser does not support web storage...");}
+		document.getElementById("userName").value = " ";
+		}
+		
+	function addPassword(password) {
+    if(typeof(Storage) !== "undefined") {
+			var password = password;
+			localStorage.setItem("password", password);
+        }
+		else {        
+		alert( "Sorry, your browser does not support web storage...");}
+		document.getElementById("password").value = " ";
+		}
+		
+	function addemail(email) {
+    if(typeof(Storage) !== "undefined") {
+			var email = email;
+			localStorage.setItem("email", email);
+        }
+		else {        
+		alert( "Sorry, your browser does not support web storage...");}
+		document.getElementById("email").value = " ";
+		document.getElementById("w").innerHTML= "Welcome " + localStorage.getItem("username")+ "i hope you enjoy your visit" ;
+		}
+		
+
 function openNav() {
     document.getElementById("nav").style.width = "250px";
 }
