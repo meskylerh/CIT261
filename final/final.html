@@ -22,6 +22,7 @@
     if (this.readyState == 4 && this.status == 200) {
 		var out = JSON.parse(this.responseText);
 		showSpot(out);
+		makeTable(out)
     }
   };
   x2http.open("GET", url, true);
@@ -38,7 +39,15 @@
 		document.getElementById("spotName").innerHTML = usd;
 		document.getElementById("total").innerHTML = total;
          }
-		 
+	function makeTable(t){
+		 var table = " ";
+		 for (var i = 0; i < 10; i++){
+		 table += "<tr>" + "<td>" + spot.dataset.data[0][i] + "</td>" +
+					"<td>" + spot.dataset.column_names[1] + "</td>" +
+					"<td>" + spot.dataset.data[i][1] + "</td>" + "</tr>;
+		 }
+		 document.getElementById("10day").innerHTML = table;
+}
 }
   </script>
 	<body onload="loadAPI()">
@@ -64,6 +73,8 @@
 	<p id="frequency"></p>
 	<p id="spotName"></p>
 	<p id="total"></p>
+	
+	<table id="10day"></table>
 	</section>
 	</div>
 
