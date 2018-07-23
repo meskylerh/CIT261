@@ -30,7 +30,8 @@ function loadJson() {
   function printOut(op){
    var text = " ";
          for (var i = 0; i < op.gold.length; i++){
-         	text += "<ul id=" + '"' + "sitems" + '"' + ">" + "<li>" + "<img src="+op.gold[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
+         	text += "<ul class=" + '"' + "metalitems" + '"' + " id=" + '"' + "sitems" + i +  '"' + " ontouchend=" + '"' + "returnn(sitems"+ i + ")" + '"'  +" ontouchstart=" + '"' + "zoom(sitems" + i + ")" + '"' +">" +
+			 "<li>" + "<img src="+op.gold[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
 			 "<li>" + "<strong>"+ op.gold[i].title + "</strong>" +"</li>" +
          	"<li>" + op.gold[i].description + "</li>" +
          	 "<li> "+ "<strong>" + op.gold[i].price + "</strong>" + "</li>" + "</ul>";
