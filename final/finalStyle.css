@@ -19,4 +19,6 @@ ul {
 li {
 	list-style:none;
 }
-
+#sitems{
+	display: flex;
+}
