@@ -30,12 +30,12 @@
   function showSpot(spot){
 		var date = spot.dataset.data[0][0];
 		var total = spot.dataset.data[0][1];
-		//var usd = spot.column_names[1];
-		var f = spot.frequency;
+		var usd = spot.dataset.column_names[1];
+		var freq = spot.dataset.frequency;
 		
 		document.getElementById("spotDate").innerHTML = date;
 		document.getElementById("frequncy").innerHTML = f;
-		//document.getElementById("spotName").innerHTML = usd;
+		document.getElementById("spotName").innerHTML = usd;
 		document.getElementById("total").innerHTML = total;
          }
 		 
