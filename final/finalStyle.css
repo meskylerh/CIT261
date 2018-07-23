@@ -34,7 +34,7 @@ li {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: 	#282747;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -44,7 +44,7 @@ li {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #4E4E4E;
+    color: #b3dfc3;
     display: block;
     transition: 0.3s;
 }
@@ -64,4 +64,14 @@ li {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+header {
+	margin-top:-25px;
+	margin-left:-8px;
+position: absolute;
+background-color: #003c51;
+width: 100%;
+display: flex;
+justify-content: space-evenly;
 }
