@@ -47,12 +47,12 @@ function loadJson() {
 </div>
 
 <!--navigation bar-->
-<div class="nav">
-<ul>
-	<li class="home"><a href="/">Home</a></li>
-	<li class="gold"><a href="#gold">Gold</a> 
-	<li class=""> <a href="#silver">Silver</a> 
-</ul>
+<div id="nav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="final.html">Home</a>
+	<a href="gold.html">Gold</a> 
+	<a href="silver.html">Silver</a> 
+</div>
     </header>
 	<div id="container">
 	<section id="silverList">
@@ -63,6 +63,14 @@ function loadJson() {
         <p>created by Skyler Hildreth</p>
     </footer>
 	
+	<script>
+function openNav() {
+    document.getElementById("nav").style.width = "250px";
+}
 
+function closeNav() {
+    document.getElementById("nav").style.width = "0";
+}
+</script>
 	</body>
 </html>
