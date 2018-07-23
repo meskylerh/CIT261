@@ -38,16 +38,15 @@
 		document.getElementById("frequency").innerHTML = freq;
 		document.getElementById("spotName").innerHTML = usd;
 		document.getElementById("total").innerHTML = total;
-         }
-	function makeTable(t){
-		 var table = " ";
+		var table = " ";
 		 for (var i = 0; i < 10; i++){
 		 table += "<tr>" + "<td>" + spot.dataset.data[0][i] + "</td>" +
 					"<td>" + spot.dataset.column_names[1] + "</td>" +
 					"<td>" + spot.dataset.data[i][1] + "</td>" + "</tr>;
 		 }
 		 document.getElementById("10day").innerHTML = table;
-}
+         }
+
 }
   </script>
 	<body onload="loadAPI()">
