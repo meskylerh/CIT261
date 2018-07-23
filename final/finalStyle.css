@@ -71,9 +71,16 @@ li {
 header {
 	margin-top:-20px;
 	margin-left:-8px;
-position: absolute;
-background-color: #003c51;
-width: 100%;
-display: flex;
-justify-content: space-evenly;
+	position: fixed;
+	background-color: #003c51;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+footer{
+position:absolute;
+bottom: 0;
+}
+h1{
+text-align:center;
 }

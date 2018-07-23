@@ -16,7 +16,7 @@
 <script>
 function loadJson() {
   var xhttp = new XMLHttpRequest();
-  var file = "silver.txt";
+  var file = "gold.txt";
   
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -29,11 +29,11 @@ function loadJson() {
   
   function printOut(op){
    var text = " ";
-         for (var i = 0; i < op.silver.length; i++){
-         	text += "<ul id=" + '"' + "sitems" + '"' + ">" + "<li>" + "<img src="+op.silver[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
-			 "<li>" + "<strong>"+ op.silver[i].title + "</strong>" +"</li>" +
-         	"<li>" + op.silver[i].description + "</li>" +
-         	 "<li> "+ "<strong>" + op.silver[i].price + "</strong>" + "</li>" + "</ul>";
+         for (var i = 0; i < op.gold.length; i++){
+         	text += "<ul id=" + '"' + "sitems" + '"' + ">" + "<li>" + "<img src="+op.gold[i].image + " height=" + '"' + "150" + '"' + "width=" + '"' + "150" +'"' +"> " +
+			 "<li>" + "<strong>"+ op.gold[i].title + "</strong>" +"</li>" +
+         	"<li>" + op.gold[i].description + "</li>" +
+         	 "<li> "+ "<strong>" + op.gold[i].price + "</strong>" + "</li>" + "</ul>";
          }
          document.getElementById("silverList").innerHTML = text;
   }
@@ -56,8 +56,8 @@ function loadJson() {
 </div>
    
 	<div id="container">
-	<h1>Browse Our Silver selection</h1>
-	<section id="silverList">
+	<h1>Browse Our Gold selection</h1>
+	<section id="goldList">
 	</section>
 	</div>
 	    <footer>
