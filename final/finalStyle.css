@@ -23,7 +23,7 @@ li {
 }
 #sitems{
 	display:: flex;
-	flew-flow: column | right;
+	flew-flow: column;
 	border-style: double;
     border-width: thick;
 }
