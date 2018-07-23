@@ -14,7 +14,7 @@
         <![endif]--> 
     </head>
 <script>
-	function loadAPI(t) {
+	function loadAPI() {
   var x2http = new XMLHttpRequest();
   var url = "https://www.quandl.com/api/v3/datasets/LBMA/SILVER.json?api_key=p3MJevMqLZuxHDZ8TEtq";
   
@@ -41,7 +41,7 @@
 		 
 }
   </script>
-	<body onload="loadJson()">
+	<body onload="loadAPI()">
 		
     <header>
 <div class="logo">
