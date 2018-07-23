@@ -22,4 +22,5 @@ li {
 #sitems{
 	display: flex;
 	flex-direction:column;
+	justify-content: space-between;
 }
