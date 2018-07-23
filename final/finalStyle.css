@@ -23,7 +23,7 @@ li {
 	list-style:none;
 	right:250px;
 }
-#sitems{
+.metalitems{
 	display:: flex;
 	flew-flow: column;
 	border-style: double;
